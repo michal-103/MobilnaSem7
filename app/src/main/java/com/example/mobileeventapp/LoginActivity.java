@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
                 String email = Email.getText().toString();
                 String password = Password.getText().toString();
 
-                if(email.equals(Em) || password.equals(Pass)){
+                if(email.equals(Em) && password.equals(Pass)){
                     Intent intent = new Intent(LoginActivity.this, MainMenuActivity.class);
                     startActivity(intent);
                 }

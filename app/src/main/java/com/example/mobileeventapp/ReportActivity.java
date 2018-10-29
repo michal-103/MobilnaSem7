@@ -1,17 +1,15 @@
 package com.example.mobileeventapp;
 
-import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class ReportActivity extends AppCompatActivity {
 
 
-
+        public String nameOfEvent;
         private Button Traffic;
         private Button Kidnapping;
         private Button Robbery;
@@ -30,26 +28,30 @@ public class ReportActivity extends AppCompatActivity {
             Traffic.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Context context = getApplicationContext();
-                    //PersonUtils cpu = (PersonUtils) view.getTag();
-                    Toast.makeText(context,"Traffic Accident Message Send" , Toast.LENGTH_SHORT).show();
-                }
+                    Intent intent = new Intent(ReportActivity.this, ReportPageActivity.class);
+                    nameOfEvent = "Traffic Accident";
+                    intent.putExtra("type",nameOfEvent);
+                    startActivity(intent);
+                        }
             });
             Kidnapping.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Context context = getApplicationContext();
-                    //PersonUtils cpu = (PersonUtils) view.getTag();
-                    Toast.makeText(context,"Kidnapping Message Send" , Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(ReportActivity.this, ReportPageActivity.class);
+                    nameOfEvent = "Kidnapping";
+                    intent.putExtra("type",nameOfEvent);
+                    startActivity(intent);
+
 
                 }
             });
             Robbery.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Context context = getApplicationContext();
-                    //PersonUtils cpu = (PersonUtils) view.getTag();
-                    Toast.makeText(context,"Robbery Message Send" , Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(ReportActivity.this, ReportPageActivity.class);
+                    nameOfEvent = "Robbery";
+                    intent.putExtra("type",nameOfEvent);
+                    startActivity(intent);
 
                 }
             });

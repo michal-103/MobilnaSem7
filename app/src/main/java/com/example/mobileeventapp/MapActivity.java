@@ -28,17 +28,20 @@ public class MapActivity extends AppCompatActivity {
         webSettings.setJavaScriptEnabled(true);
         // performance hacks!
         webSettings.setRenderPriority(WebSettings.RenderPriority.HIGH);
-        //webSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);
+        webSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);
 
         // multi-touch zoom
         webSettings.setBuiltInZoomControls(true);
         webSettings.setDisplayZoomControls(false);
         //myWebView.loadUrl("https://www.google.com");
 
-
-        myWebView.loadUrl(url);
+        location="&map_id=Skyrim";
+        myWebView.loadUrl(this.url+location);
+        //myWebView.loadUrl(url);
         myWebView.setWebViewClient(new WebViewClient());
 
 
     }
+
+
 }
